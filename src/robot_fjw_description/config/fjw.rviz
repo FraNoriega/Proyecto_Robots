@@ -1,0 +1,128 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+    Property Tree Widget:
+      Expanded: [/Global Options1, /Status1]
+    Tree Height: 600
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Enabled: true
+      Name: Grid
+      Cell Size: 1
+      Plane Cell Count: 25
+      Color: 150; 150; 150
+      Value: true
+    - Class: rviz_default_plugins/RobotModel
+      Enabled: true
+      Name: Robot
+      Description Source: Topic
+      Description Topic:
+        Depth: 5
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /robot_description
+      Collision Enabled: false
+      Visual Enabled: true
+      Value: true
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: Letras planificadas (colores suaves)
+      Marker Topic:
+        Depth: 10
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /letras_plan
+      Value: true
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: Letras recorridas (colores intensos)
+      Marker Topic:
+        Depth: 10
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /letras_recorridas
+      Value: true
+    - Class: rviz_default_plugins/Path
+      Enabled: true
+      Name: Ruta completa (incluye conexiones)
+      Topic:
+        Depth: 10
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /trayectoria_planificada
+      Line Style: Lines
+      Line Width: 0.01
+      Color: 160; 160; 160
+      Value: true
+    - Class: rviz_default_plugins/Path
+      Enabled: true
+      Name: Recorrido real (amarillo)
+      Line Style: Lines
+      Line Width: 0.035
+      Topic:
+        Depth: 10
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /trayectoria_real
+      Color: 230; 184; 35
+      Value: true
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: Etiquetas F J W
+      Marker Topic:
+        Depth: 10
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /etiquetas_fjw
+      Value: true
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: Flecha del robot
+      Marker Topic:
+        Depth: 10
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /pose_actual_fjw
+      Value: true
+    - Class: rviz_default_plugins/LaserScan
+      Enabled: false
+      Name: LIDAR
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /scan
+      Value: false
+  Enabled: true
+  Global Options:
+    Background Color: 45; 45; 50
+    Fixed Frame: odom
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 16
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+      Pitch: 1.57
+      Yaw: 0
+Window Geometry:
+  Height: 850
+  Width: 1400

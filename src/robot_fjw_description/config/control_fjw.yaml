@@ -1,0 +1,9 @@
+controlador_fjw:
+  ros__parameters:
+    use_sim_time: true
+    max_speed: 0.15       # m/s. Aumentar solo si sigue bien la ruta.
+    lookahead: 0.20       # m. Pure Pursuit.
+    start_delay: 2.0      # s, tras recibir odometria.
+    max_path_error: 0.65  # m. Detiene si se aleja demasiado.
+    usar_lidar: true      # parar si detecta obstaculos o falta /scan.
+    archivo_csv: '~/robot_fjw_ws/resultados/recorrido_fjw.csv'
