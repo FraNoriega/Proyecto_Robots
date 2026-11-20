@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ROBOT">
+  <!-- The physical rear wheels are driven; the two front knuckles steer. -->
+  <gazebo>
+    <plugin filename="gz-sim-ackermann-steering-system" name="gz::sim::systems::AckermannSteering">
+      <left_joint>left_bot_joint</left_joint>
+      <right_joint>right_bot_joint</right_joint>
+      <left_steering_joint>dirI_joint</left_steering_joint>
+      <right_steering_joint>dirD_joint</right_steering_joint>
+      <wheel_base>0.145</wheel_base>
+      <wheel_separation>0.127</wheel_separation>
+      <kingpin_width>0.08</kingpin_width>
+      <wheel_radius>0.030</wheel_radius>
+      <steering_limit>0.240000</steering_limit>
+      <odom_publish_frequency>30</odom_publish_frequency>
+      <topic>/cmd_vel</topic>
+      <odom_topic>/odom</odom_topic>
+      <tf_topic>/tf</tf_topic>
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_link</child_frame_id>
+      <min_velocity>-0.50</min_velocity>
+      <max_velocity>0.50</max_velocity>
+      <min_acceleration>-0.35</min_acceleration>
+      <max_acceleration>0.35</max_acceleration>
+    </plugin>
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+      <topic>/joint_states</topic>
+    </plugin>
+  </gazebo>
+  <gazebo reference="base_link"><self_collide>false</self_collide><visual><material><ambient>0.72 0.20 0.025 1</ambient><diffuse>1.00 0.34 0.035 1</diffuse><specular>0.32 0.32 0.32 1</specular></material></visual></gazebo>
+  <gazebo reference="rfI_1"><mu1>1.0</mu1><mu2>1.0</mu2><self_collide>false</self_collide><visual><material><ambient>0.045 0.05 0.06 1</ambient><diffuse>0.065 0.075 0.090 1</diffuse><specular>0.06 0.06 0.06 1</specular></material></visual></gazebo>
+  <gazebo reference="rfD_1"><mu1>1.0</mu1><mu2>1.0</mu2><self_collide>false</self_collide><visual><material><ambient>0.045 0.05 0.06 1</ambient><diffuse>0.065 0.075 0.090 1</diffuse><specular>0.06 0.06 0.06 1</specular></material></visual></gazebo>
+  <gazebo reference="rtI_1"><mu1>1.0</mu1><mu2>1.0</mu2><self_collide>false</self_collide><visual><material><ambient>0.045 0.05 0.06 1</ambient><diffuse>0.065 0.075 0.090 1</diffuse><specular>0.06 0.06 0.06 1</specular></material></visual></gazebo>
+  <gazebo reference="rtD_1"><mu1>1.0</mu1><mu2>1.0</mu2><self_collide>false</self_collide><visual><material><ambient>0.045 0.05 0.06 1</ambient><diffuse>0.065 0.075 0.090 1</diffuse><specular>0.06 0.06 0.06 1</specular></material></visual></gazebo>
+  <gazebo reference="laser_link">
+    <sensor name="lidar360" type="gpu_lidar">
+      <always_on>true</always_on>
+      <visualize>false</visualize>
+      <update_rate>5</update_rate>
+      <topic>/scan</topic>
+      <gz_frame_id>laser_link</gz_frame_id>
+      <ray>
+        <scan><horizontal>
+          <samples>180</samples><resolution>1</resolution>
+          <min_angle>-3.14159265</min_angle><max_angle>3.14159265</max_angle>
+        </horizontal></scan>
+        <range><min>0.10</min><max>12.0</max><resolution>0.01</resolution></range>
+      </ray>
+    </sensor>
+  <visual><material><ambient>0.01 0.44 0.55 1</ambient><diffuse>0.02 0.82 0.97 1</diffuse><specular>0.28 0.28 0.28 1</specular></material></visual></gazebo>
+<gazebo reference="dir1_1"><visual><material><ambient>0.12 0.14 0.16 1</ambient><diffuse>0.19 0.23 0.28 1</diffuse><specular>0.17 0.17 0.17 1</specular></material></visual></gazebo><gazebo reference="dir2_1"><visual><material><ambient>0.12 0.14 0.16 1</ambient><diffuse>0.19 0.23 0.28 1</diffuse><specular>0.17 0.17 0.17 1</specular></material></visual></gazebo></robot>

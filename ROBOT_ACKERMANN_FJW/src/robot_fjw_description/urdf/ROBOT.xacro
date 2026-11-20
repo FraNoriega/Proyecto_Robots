@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ROBOT">
+  <xacro:include filename="$(find robot_fjw_description)/urdf/materials.xacro"/>
+  <xacro:include filename="$(find robot_fjw_description)/urdf/ROBOT.ros2control"/>
+  <xacro:include filename="$(find robot_fjw_description)/urdf/ROBOT.gazebo"/>
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.004497968327154167 -0.00015291514718283468 0.06307724299756604" rpy="0 0 0"/>
+      <mass value="6.208623948406762"/>
+      <inertia ixx="0.011341" iyy="0.03454" izz="0.0426" ixy="-0.000109" iyz="6e-06" ixz="0.000662"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find robot_fjw_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="carro_naranja"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.082" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.18 0.095 0.035"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="dir1_1">
+    <inertial>
+      <origin xyz="-8.540390616929017e-14 -0.007136226654248297 -0.008063344353307213" rpy="0 0 0"/>
+      <mass value="0.02830746868658945"/>
+      <inertia ixx="2e-06" iyy="1e-06" izz="2e-06" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0725 0.04 -0.039" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find robot_fjw_description)/meshes/dir1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="metal_grafito"/>
+    </visual>
+  </link>
+  <link name="dir2_1">
+    <inertial>
+      <origin xyz="-8.551492847175268e-14 0.007124764621972042 -0.008061934280171764" rpy="0 0 0"/>
+      <mass value="0.028264917722106472"/>
+      <inertia ixx="2e-06" iyy="1e-06" izz="2e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0725 -0.04 -0.039" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find robot_fjw_description)/meshes/dir2_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="metal_grafito"/>
+    </visual>
+  </link>
+  <link name="rfI_1">
+    <inertial>
+      <origin xyz="2.3634333055633228e-06 0.00868466271958887 7.399129813779465e-06" rpy="0 0 0"/>
+      <mass value="0.24141092419105015"/>
+      <inertia ixx="7.2e-05" iyy="0.000131" izz="7.2e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0725 -0.0635 -0.03" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find robot_fjw_description)/meshes/rfI_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="caucho_negro"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
+      <geometry>
+        <cylinder radius="0.030" length="0.020"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rtI_1">
+    <inertial>
+      <origin xyz="-1.2906342661267445e-15 0.00868466271958887 7.767428080854288e-06" rpy="0 0 0"/>
+      <mass value="0.24141092419105"/>
+      <inertia ixx="7.2e-05" iyy="0.000131" izz="7.2e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0725 -0.0635 -0.03" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find robot_fjw_description)/meshes/rtI_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="caucho_negro"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
+      <geometry>
+        <cylinder radius="0.030" length="0.020"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rtD_1">
+    <inertial>
+      <origin xyz="3.3493611526907996e-06 -0.00868464201381386 -7.010330869031828e-06" rpy="0 0 0"/>
+      <mass value="0.24141084005596447"/>
+      <inertia ixx="7.2e-05" iyy="0.000131" izz="7.2e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0725 0.0635 -0.03" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find robot_fjw_description)/meshes/rtD_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="caucho_negro"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
+      <geometry>
+        <cylinder radius="0.030" length="0.020"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rfD_1">
+    <inertial>
+      <origin xyz="1.945063866221064e-07 -0.008684642013813804 7.7669251501572e-06" rpy="0 0 0"/>
+      <mass value="0.24141084005596442"/>
+      <inertia ixx="7.2e-05" iyy="0.000131" izz="7.2e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0725 0.0635 -0.03" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find robot_fjw_description)/meshes/rfD_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="caucho_negro"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
+      <geometry>
+        <cylinder radius="0.030" length="0.020"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="dirD_joint" type="revolute">
+    <origin xyz="0.0725 -0.04 0.039" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="dir1_1"/>
+    <axis xyz="0 0 1"/>
+    <limit upper="0.279253" lower="-0.279253" effort="100" velocity="2.0"/>
+  </joint>
+  <joint name="dirI_joint" type="revolute">
+    <origin xyz="0.0725 0.04 0.039" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="dir2_1"/>
+    <axis xyz="0 0 1"/>
+    <limit upper="0.279253" lower="-0.279253" effort="100" velocity="2.0"/>
+  </joint>
+  <joint name="left_top_joint" type="continuous">
+    <origin xyz="0.0 0.0235 -0.009" rpy="0 0 0"/>
+    <parent link="dir2_1"/>
+    <child link="rfI_1"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint>
+  <joint name="left_bot_joint" type="continuous">
+    <origin xyz="-0.0725 0.0635 0.03" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="rtI_1"/>
+    <axis xyz="0.0 1.0 -0.0"/>
+  </joint>
+  <joint name="right_bot_joint" type="continuous">
+    <origin xyz="-0.0725 -0.0635 0.03" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="rtD_1"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint>
+  <joint name="right_top_joint" type="continuous">
+    <origin xyz="0.0 -0.0235 -0.009" rpy="0 0 0"/>
+    <parent link="dir1_1"/>
+    <child link="rfD_1"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="laser_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.022" length="0.016"/>
+      </geometry>
+      <material name="lidar_cian">
+        </material>
+    </visual>
+    <inertial>
+      <mass value="0.05"/>
+      <inertia ixx="0.000003" iyy="0.000003" izz="0.000003" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+  <joint name="laser_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="laser_link"/>
+    <origin xyz="0 0 0.14" rpy="0 0 0"/>
+  </joint>
+</robot>
